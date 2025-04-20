@@ -1,0 +1,34 @@
+Business Rules for Appt Reminder
+
+Goal: As a music teacher, I want an appointment reminder that reminds students the day before of their upcoming lesson. I want it to be able to send a message to their cellphone, and I want it to be able to both receive a response, and store the sent message/received response for historical purposes.
+
+Requirements
+1. Send push notifications to students reminding them of upcoming lessons.
+
+2. Receive replies from students for historical purposes.
+
+3. Give students a way to opt out of receiving messages with this system.
+
+4. The system must be automated so I am not manually doing this work. Ideally, it would be set around a scheduled release.
+
+
+Business Rules
+1. Push notifications must go out the morning before a drum lesson at 10AM local time.
+
+2. Students must only receive a single reminder of their upcoming music lesson.
+
+3. Push notifications must be stored for historical purposes.
+
+4. Students must be able to send a simple code to opt out of the messages.
+
+5. I must use systemd or cron to schedule the job so that any Linux machine (including a Docker container) can run the operation.
+
+6. Must use database to store:
+  6.a. student profiles
+  6.b. sent messages
+  6.c. reply messages
+
+Flow for app
+1. send student notification of upcoming lesson.
+2. store their reply (if they reply)
+
