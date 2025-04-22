@@ -6,9 +6,10 @@ import schedule
 import time
 import configparser
 from utils.app_logger import debug
+from utils.connection import Connection 
 
 def main():
-    print("hi")
-    debug("testing message")
+    conn = Connection()
+    conn.test_db_connection()
 
 main()

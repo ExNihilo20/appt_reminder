@@ -1,1 +1,4 @@
-.appt_remind_venv
+*.appt_remind_venv
+*.csv
+*.odt
+*.log
