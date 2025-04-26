@@ -18,9 +18,7 @@ class Connection:
     
     def create_student(self, firstname:str, lastname:str, email_address:str, phone_number:str, carrier:str, enabled:bool):
         try:
-            debug("about to create new student")
             with SessionLocal() as session:
-                debug("inside with statement")
                 new_student = Student(
                     firstname=firstname,
                     lastname=lastname,
@@ -29,13 +27,27 @@ class Connection:
                     carrier=carrier,
                     enabled=enabled
                 )
-                debug("new_student instantiated")
                 session.add(new_student)
-                debug("new_student added to session")
                 session.commit()
-                debug("commit attempted with new student. about to return him/her")
+                session.refresh(new_student) # remove if not returning student
                 return new_student
         except Exception as e:
             session.rollback()
             error("unable to create new student")
+            raise e
+        
+    def drop_student(self, phone_number:str):
+        try:
+            del_student_msg = ""
+            with SessionLocal() as session:
+                student_to_delete = session.query(Student).filter_by(
+                    phone_number=phone_number
+                ).first()
+                del_student_msg = f"Student {student_to_delete.lastname}, {student_to_delete.firstname} (id: {student_to_delete.student_id}) successfully deleted."
+                session.delete(student_to_delete)
+                info(del_student_msg)
+                session.commit()
+        except Exception as e:
+            session.rollback()
+            error("unable to delete student")
             raise e
