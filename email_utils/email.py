@@ -1,7 +1,7 @@
-import csv
-import smtplib
-from email.mime.text import MIMEText
 from configparser import ConfigParser
+
+"""
+This script is supposed to handle all traffic to and from the email server."""
 
 # Proton Bridge SMTP settings (running locally)
 parser = ConfigParser()
