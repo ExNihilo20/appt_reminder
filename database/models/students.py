@@ -12,7 +12,7 @@ class Student(Base):
     firstname = Column(String(50), nullable=False)
     lastname = Column(String(50), nullable=False)
     email_address = Column(String(100), nullable=True)
-    phone_number = Column(String(10), nullable=False)
+    phone_number = Column(String(13), nullable=False)
     carrier = Column(String(25), nullable=False)
     enabled=Column(Boolean, default=True)
     

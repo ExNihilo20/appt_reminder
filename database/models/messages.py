@@ -10,10 +10,9 @@ class Message(Base):
     message_id = Column(Integer, primary_key=True, autoincrement=True)
     student_id = Column(Integer, ForeignKey('students.student_id'), nullable=False)
     subject = Column(String(100), nullable=True)
-    body = Column(Text, nullable=False)
+    body = Column(String(250), nullable=False)
     sent_at = Column(DateTime)
-    status = Column(String(25)) # 'delivered', 'failed', etc.
-    source = Column(String(25)) # email, 'manual', etc
+    direction = Column(String(25)) # email, 'manual', etc
     # These are set by the trigger
     created_date = Column(DateTime, default=datetime.now())
     modified_date = Column(DateTime, default=datetime.now(), onupdate=datetime.now())
