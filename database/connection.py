@@ -13,11 +13,38 @@ class Connection:
         info("shared engine created successfully")
     
     def test_db_connection(self):
+        """
+        Tests a connection to the database by generating a 'hello world' message with a SELECT statement. Prints that statement to the console.
+        
+        Args:
+            No arguments.
+
+        Returns:
+            Nothing returned.
+
+        Exceptions:
+            Does not throw an exception."""
         with self.engine.connect() as conn:
             result = conn.execute(text("SELECT 'hello world'"))
             print(result.all())
     
     def create_student(self, firstname:str, lastname:str, email_address:str, phone_number:str, carrier:str, enabled:bool):
+        """
+        Creates a Student entity object for storage in the database.
+        
+        Args:
+            firstname (str): the first name of the student.
+            lastname (str): the last name of the student.
+            email_address (str): the full email address of the student.
+            phone_number (str): the phone number of the student in the form of (111)222-3333.
+            carrier (str): the mobile carrier (Verizon, AT&T, US Cellular, etc.) of the student.
+            enabled (bool): Whether the student has agreed to receive reminders.
+        
+        Returns:
+            The newly-created Student entity object.
+        
+        Raises:
+            Exception: If an error occurs during the student creation lifecycle."""
         try:
             with SessionLocal() as session:
                 new_student = Student(
@@ -38,6 +65,17 @@ class Connection:
             raise e
     
     def get_student(self, phone_number:str):
+        """
+        Retrieves a Student entity object. Finds the student with the student's phone number.
+        
+        Args:
+            phone_number (str): the phone number of the student in the form of (111)222-3333.
+        
+        Returns:
+            A Student entity object from the database.
+        
+        Raises:
+            Exception: for any errors that occur during the student retreival lifecycle."""
         try:
             with SessionLocal() as session:
                 searched_student = session.query(Student).filter_by(
@@ -50,6 +88,17 @@ class Connection:
             raise e
         
     def drop_student(self, phone_number:str):
+        """
+        Uses a student's phone number to remove a Student entity object from the database.
+        
+        Args:
+            phone_number (str): the phone number of the student in the form of (111)222-3333.
+        
+        Returns:
+            No return.
+        
+        Raises:
+            Exception: for any errors during the student deletion lifecycle."""
         try:
             del_student_msg = ""
             with SessionLocal() as session:
@@ -67,14 +116,20 @@ class Connection:
         
     def create_message(self, student_id:int, subject:str, body:str, sent_at:datetime, direction:str):
         """
-        Creates a message based on a student id.
+        Creates a message for storage in the database. Messages are sent to or received from a person or group.  The session is rolled back if any errors occur during execution. 
         
         Args:
             student_id (int): the id of the student for whom the message is generated.
             subject (str): The subject field for the message.
             body (str): The contents of the message body.
             sent_at (datetime): The date the message was sent.
-            direction (str): The direction (outgoing, incoming) of the message."""
+            direction (str): The direction (outgoing, incoming) of the message.
+        
+        Returns:
+            The newly-generated Message entity object from the database.
+        
+        Raises:
+            Exception: for any errors during the message creation lifecycle."""
         try:
             with SessionLocal() as session:
                 message = Message
@@ -98,16 +153,16 @@ class Connection:
     
     def get_messages(self, student_id:int) -> list:
         """
-        Retrieves messages from the database as a list. The session is rolled back if any errors occur during execution.
+        Retrieves Message entity objects from the database as a list. The session is rolled back if any errors occur during execution. 
 
         Args:
-            student_id (int): The foreign key (FK) used to find the messages.
+            student_id (int): The foreign key Message table's (FK) used to find all the messages to/from a particular student.
         
         Returns:
-            messages (list): The list of messages for parsing.
+            messages (list): The list of Message entity objects for parsing.
         
         Raises:
-            Exception: if an error occurs during exection.
+            Exception: if an error occurs during the message retrieval lifecycle.
         """
         try:
             retrieved_messages = ""
@@ -123,11 +178,22 @@ class Connection:
             error("unable to delete message")
             raise e
     
-    def create_reminder(self, reminder_id:int, category:str, body:str):
+    def create_reminder(self, category:str, body:str):
+        """
+        Creates a new reminder for use in a message. For outgoing messages, reminders are put inside the message body. The transaction is rolledback if an error occurs during exection.
+        
+        Args:
+            category (str): the type of reminder (drums, church, family, self, etc.)
+            body (str): the reminder text.
+        
+        Returns:
+            new_reminder (Reminder): a reminder entity object from the database.
+        
+        Raises:
+            Exception: for any errors occuring during the reminder creation lifecycle."""
         try:
             with SessionLocal() as session:
                 new_reminder = Reminder(
-                    student_id=reminder_id,
                     category=category,
                     body=body,
                 )
@@ -141,6 +207,19 @@ class Connection:
             raise e
     
     def drop_reminder(self, category:str, body:str):
+        """
+        Deletes a reminder row from the database. Finds the target row by its category and body contents.
+        
+        Args:
+            category (str): the type of reminder (drums, church, family, self, etc.)
+            body (str): the reminder text.
+        
+        Returns:
+            No return.
+        
+        Raises:
+            Exception: for any errors occuring during the reminder deletion lifecycle.
+            """
         try:
             del_reminder_msg = ""
             with SessionLocal() as session:
