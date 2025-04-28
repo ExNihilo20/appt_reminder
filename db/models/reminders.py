@@ -1,6 +1,6 @@
 from sqlalchemy import Column, Integer, String, DateTime
 from datetime import datetime
-from database.base import Base
+from db.base import Base
 
 
 class Reminder(Base):

@@ -1,9 +1,9 @@
-from database.engine import mysql_engine, SessionLocal
+from db.engine import mysql_engine, SessionLocal
 from sqlalchemy import text
 from utils.app_logger import info
-from database.models.students import Student
-from database.models.messages import Message
-from database.models.reminders import Reminder
+from db.models.students import Student
+from db.models.messages import Message
+from db.models.reminders import Reminder
 from datetime import datetime
 from utils.app_logger import debug, error
 

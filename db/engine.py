@@ -3,8 +3,8 @@ from sqlalchemy.orm import sessionmaker, Session
 from configparser import ConfigParser
 from utils.app_logger import debug, info, error
 import os
-from database.models.students import Student
-from database.models.messages import Message
+from db.models.students import Student
+from db.models.messages import Message
 
 # grab mysql strings
 parser = ConfigParser()
