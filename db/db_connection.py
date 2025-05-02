@@ -8,6 +8,7 @@ from datetime import datetime
 from utils.app_logger import debug, error
 
 class Connection:
+
     def __init__(self):
         self.engine = mysql_engine
         info("shared engine created successfully")
@@ -224,8 +225,7 @@ class Connection:
             del_reminder_msg = ""
             with SessionLocal() as session:
                 reminder_to_delete = session.query(Reminder).filter_by(
-                    category=category,
-                    body=body
+                    category=category
                 ).first()
                 del_reminder_msg = f"Reminder id: {reminder_to_delete.reminder_id} successfully deleted."
                 session.delete(reminder_to_delete)
