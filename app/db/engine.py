@@ -1,10 +1,8 @@
-from sqlalchemy import create_engine, text
-from sqlalchemy.orm import sessionmaker, Session
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
 from configparser import ConfigParser
-from utils.app_logger import debug, info, error
+from app.proj_utils.app_logger import info
 import os
-from db.models.students import Student
-from db.models.messages import Message
 
 # grab mysql strings
 parser = ConfigParser()
@@ -15,7 +13,7 @@ print(f'has section mysql: {parser.has_section('mysql')}')
 info("grabbed configs")
 
 
-# conntion params
+# connection params
 mysql_user = parser.get('mysql', 'mysql_user')
 mysql_pass = parser.get('mysql', 'mysql_pass')
 mysql_host = parser.get('mysql', 'mysql_host')
@@ -29,5 +27,6 @@ info('loaded connection string')
 # pass string into engine
 mysql_engine = create_engine(connection_string, echo=True)
 info('passed conn_str into engine')
-SessionLocal = sessionmaker(bind=mysql_engine, autoflush=False, autocommit=False)
+# create a high-level session to be used throughout application
+Session = sessionmaker(bind=mysql_engine, autoflush=False, autocommit=False)
 info("engine and sessionmaker initialized")

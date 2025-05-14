@@ -1,6 +1,6 @@
 from flask import Blueprint, jsonify, request
-from db.db_connection import Connection
-from utils.app_logger import info, error, debug
+from app.db.db_connection import Connection
+from app.proj_utils.app_logger import info, error, debug
 
 students_bp = Blueprint("students", __name__)
 debug("student bp created")
