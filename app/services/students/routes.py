@@ -1,16 +1,16 @@
 from flask import Blueprint, jsonify, request
-from app.db.db_connection import Connection
+from app.services.students.action.student_action import StudentAction
 from app.proj_utils.app_logger import info, error, debug
 
 students_bp = Blueprint("students", __name__)
 debug("student bp created")
-conn = Connection()
+action = StudentAction()
 debug("connection created")
 
 @students_bp.route("/students/<string:phone_number>", methods=["GET"])
 def get_student(phone_number):
     debug("inside get_student view")
-    student = conn.get_student(phone_number)
+    student = action.get_student(phone_number)
     debug("student called by phone number")
     if student:
         debug("about to return json object to front end caller")

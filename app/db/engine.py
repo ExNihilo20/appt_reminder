@@ -3,12 +3,12 @@ from sqlalchemy.orm import sessionmaker
 from configparser import ConfigParser
 from app.proj_utils.app_logger import info
 import os
-
 # grab mysql strings
 parser = ConfigParser()
 # outside package scope
 config_path = os.path.expanduser("~/Documents/projects/proj_configs/conf/appt_reminder.config")
 parser.read(config_path, encoding="UTF-8")
+
 print(f'has section mysql: {parser.has_section('mysql')}')
 info("grabbed configs")
 

@@ -2,7 +2,7 @@ from app.db.engine import Session
 from app.proj_utils.app_logger import error
 from app.models.students import Student
 
-class StudentService:
+class StudentAction:
     def __init__(self):
         pass
 
