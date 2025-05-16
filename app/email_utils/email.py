@@ -1,11 +1,11 @@
 from configparser import ConfigParser
-
+import os
 """
 This script is supposed to handle all traffic to and from the email server."""
 
 # Proton Bridge SMTP settings (running locally)
 parser = ConfigParser()
-configs = parser.read("../../appt_reminder.conf", encoding="UTF-8")
+configs = os.path.expanduser("~/Documents/projects/proj_configs/conf/appt_reminder.config")
 pb_configs = configs['proton_bridge']
 pm_configs = configs['protonmail']
 carrier_configs = configs['carrier']

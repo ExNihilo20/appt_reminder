@@ -1,4 +1,5 @@
 from app.db.engine import Session
+from sqlalchemy import select
 from app.proj_utils.app_logger import error, info
 from app.models.messages import Message
 from datetime import datetime
@@ -25,7 +26,7 @@ class MessageAction:
         Raises:
             Exception: for any errors during the message creation lifecycle."""
         try:
-            with Session() as session:
+            with Session.begin() as session:
                 message = Message
                 new_message = Message(
                     student_id=student_id,
@@ -45,7 +46,7 @@ class MessageAction:
             error("unable to create new message")
             raise e
     
-    def get_messages(self, student_id:int) -> list:
+    def get_messages(self, student_identifier:int) -> list:
         """
         Retrieves Message entity objects from the database as a list. The session is rolled back if any errors occur during execution. 
 
@@ -60,10 +61,19 @@ class MessageAction:
         """
         try:
             retrieved_messages = ""
-            with Session() as session:
-                messages = session.query(Message).filter_by(
-                    student_id=student_id
-                ).all()
+            with Session.begin() as session:
+                # TODO: VERIFY 
+                # use the select statement to build query statement
+                messages = session.execute(
+                    select(Message).filter_by(
+                        student_id=student_identifier
+                    )
+                ).scalars().all()
+                # statement = select(Message).filter_by(
+                #     student_id=student_id
+                # )
+                # # get a list of messages
+                # messages = session.scalars(statement).all()
                 retrieved_messages = f"Retrieved {len(messages)} messages."
                 info(retrieved_messages)
                 return messages

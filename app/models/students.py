@@ -1,11 +1,10 @@
 
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
 from sqlalchemy.orm import relationship
-from sqlalchemy.ext.declarative import declarative_base
 from app.db.base import Base
 from datetime import datetime
 
-class Student(Base):
+class Students(Base):
     __tablename__ = 'STUDENTS'
 
     student_id = Column(Integer, primary_key=True, autoincrement=True)

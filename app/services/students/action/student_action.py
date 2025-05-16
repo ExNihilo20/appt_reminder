@@ -1,6 +1,8 @@
 from app.db.engine import Session
-from app.proj_utils.app_logger import error
-from app.models.students import Student
+from sqlalchemy import text
+from app.proj_utils.app_logger import error, info, debug
+from app.models.students import Students
+from app.services.students.domain.student import Student
 
 class StudentAction:
     def __init__(self):
@@ -21,14 +23,20 @@ class StudentAction:
         Raises:
             Exception: for any errors that occur during the student retreival lifecycle."""
         try:
-            with Session() as session:
-                searched_student = session.query(Student).filter_by(
-                    phone_number=phone_number
-                ).first()
-                return searched_student
+            with Session.begin() as session:
+                # define query
+                query = session.execute(
+                   "SELECT * FROM STUDENT" \
+                   "WHERE phone_number = %s", 
+                   (phone_number,)
+                )
+                
+                # fetch the result
+                student = query
+                return query
         except Exception as e:
             session.rollback()
-            error("unable to create new student")
+            error("unable to retrieve the student")
             raise e
 
     def create_student(self, firstname:str, lastname:str, email_address:str, phone_number:str, carrier:str, enabled:bool):
@@ -49,7 +57,9 @@ class StudentAction:
         Raises:
             Exception: If an error occurs during the student creation lifecycle."""
         try:
-            with Session as session:
+            # TODO: add None type checks and other validation for attributes passed in
+            # TODO: add a model that can be passed in as a single object instead of all these attributes
+            with Session.begin() as session:
                 new_student = Student(
                     firstname=firstname,
                     lastname=lastname,
@@ -81,7 +91,7 @@ class StudentAction:
             Exception: for any errors during the student deletion lifecycle."""
         try:
             del_student_msg = ""
-            with Session() as session:
+            with Session.begin() as session:
                 student_to_delete = session.query(Student).filter_by(
                     phone_number=phone_number
                 ).first()
