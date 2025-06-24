@@ -3,5 +3,9 @@
 *.odt
 *.log
 logs/
+
 .appt_remind_venv/
+venv/
+
+__pycache__/
 *.pyc
