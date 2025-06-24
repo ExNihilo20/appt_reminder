@@ -1,4 +1,4 @@
-from  app.services.students.domain.decorators import *
+from  app.proj_utils.decorators import *
 from dataclasses import dataclass, field
 
 @dataclass
@@ -17,7 +17,7 @@ class Student:
         return self._student_id
 
     
-    @property.setter
+    @student_id.setter
     @not_none()
     @is_numeric()
     @length(1,9)
@@ -28,7 +28,7 @@ class Student:
     def first_name(self):
         return self._first_name
     
-    @property.setter
+    @first_name.setter
     @not_blank()
     def first_name(self, first_name):
         self._first_name = first_name
@@ -37,7 +37,7 @@ class Student:
     def last_name(self):
         return self._last_name
     
-    @property.setter
+    @last_name.setter
     @not_blank()
     def last_name(self, last_name):
         self._last_name = last_name
@@ -46,7 +46,7 @@ class Student:
     def email_address(self):
         return self._email_address
     
-    @property.setter
+    @email_address.setter
     @length(10,50)
     @email()
     def email_address(self, email_address):
@@ -56,7 +56,7 @@ class Student:
     def phone_number(self):
         return self._phone_number
     
-    @property.setter
+    @phone_number.setter
     @length(10, 13)
     @not_blank()
     def phone_number(self, phone_number):
@@ -67,7 +67,7 @@ class Student:
     def carrier(self):
         return self._carrier
     
-    @property.setter
+    @carrier.setter
     @not_none()
     def carrier(self, carrier):
         self._carrier = carrier
@@ -77,9 +77,12 @@ class Student:
     def enabled(self):
         return self._enabled
     
-    @property.setter
+    @enabled.setter
     def enabled(self, enabled):
         self._enabled = enabled
+
+    def toStudentsTable(self):
+        
 
     def __str__(self):
         return (f"Student ID: {self.student_id}, "

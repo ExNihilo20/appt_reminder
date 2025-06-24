@@ -1,1 +1,973 @@
-2025-04-12 17:17 - DEBUG - testing message
+2025-05-14 08:44 - INFO - grabbed configs
+2025-05-14 08:44 - INFO - assigned connection params
+2025-05-14 08:44 - INFO - loaded connection string
+2025-05-14 08:44 - INFO - passed conn_str into engine
+2025-05-14 08:44 - INFO - engine and sessionmaker initialized
+2025-05-14 08:44 - DEBUG - student bp created
+2025-05-14 08:44 - DEBUG - connection created
+2025-05-14 08:44 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-14 08:44 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-14 08:44 - INFO -  * Restarting with watchdog (inotify)
+2025-05-14 08:44 - INFO - grabbed configs
+2025-05-14 08:44 - INFO - assigned connection params
+2025-05-14 08:44 - INFO - loaded connection string
+2025-05-14 08:44 - INFO - passed conn_str into engine
+2025-05-14 08:44 - INFO - engine and sessionmaker initialized
+2025-05-14 08:44 - DEBUG - student bp created
+2025-05-14 08:44 - DEBUG - connection created
+2025-05-14 08:44 - WARNING -  * Debugger is active!
+2025-05-14 08:44 - INFO -  * Debugger PIN: 433-406-673
+2025-05-14 08:59 - INFO - grabbed configs
+2025-05-14 08:59 - INFO - assigned connection params
+2025-05-14 08:59 - INFO - loaded connection string
+2025-05-14 08:59 - INFO - passed conn_str into engine
+2025-05-14 08:59 - INFO - engine and sessionmaker initialized
+2025-05-14 08:59 - DEBUG - student bp created
+2025-05-14 08:59 - DEBUG - connection created
+2025-05-14 08:59 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-05-14 08:59 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 09:46 - INFO - grabbed configs
+2025-06-19 09:46 - INFO - assigned connection params
+2025-06-19 09:46 - INFO - loaded connection string
+2025-06-19 09:46 - INFO - passed conn_str into engine
+2025-06-19 09:46 - INFO - engine and sessionmaker initialized
+2025-06-19 09:46 - DEBUG - student bp created
+2025-06-19 09:46 - DEBUG - connection created
+2025-06-19 09:47 - INFO - grabbed configs
+2025-06-19 09:47 - INFO - assigned connection params
+2025-06-19 09:47 - INFO - loaded connection string
+2025-06-19 09:47 - INFO - passed conn_str into engine
+2025-06-19 09:47 - INFO - engine and sessionmaker initialized
+2025-06-19 09:47 - DEBUG - student bp created
+2025-06-19 09:47 - DEBUG - connection created
+2025-06-19 09:47 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 09:47 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 09:48 - INFO - 127.0.0.1 - - [19/Jun/2025 09:48:34] "[33mGET / HTTP/1.1[0m" 404 -
+2025-06-19 09:51 - INFO - 127.0.0.1 - - [19/Jun/2025 09:51:39] "[33mGET /students/111-222-3333 HTTP/1.1[0m" 404 -
+2025-06-19 09:53 - DEBUG - inside get_student view
+2025-06-19 09:53 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 28, in get_student
+    query = session.execute(
+            ^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2149, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 621, in _literal_coercion
+    return self._text_coercion(element, argname, **kw)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 614, in _text_coercion
+    return _no_text_coercion(element, argname)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 584, in _no_text_coercion
+    raise exc_cls(
+sqlalchemy.exc.ArgumentError: Textual SQL expression 'SELECT * FROM STUDENTWHER...' should be explicitly declared as text('SELECT * FROM STUDENTWHER...')
+2025-06-19 09:53 - INFO - 127.0.0.1 - - [19/Jun/2025 09:53:56] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:10 - INFO - grabbed configs
+2025-06-19 10:10 - INFO - assigned connection params
+2025-06-19 10:10 - INFO - loaded connection string
+2025-06-19 10:10 - INFO - passed conn_str into engine
+2025-06-19 10:10 - INFO - engine and sessionmaker initialized
+2025-06-19 10:11 - INFO - grabbed configs
+2025-06-19 10:11 - INFO - assigned connection params
+2025-06-19 10:11 - INFO - loaded connection string
+2025-06-19 10:11 - INFO - passed conn_str into engine
+2025-06-19 10:11 - INFO - engine and sessionmaker initialized
+2025-06-19 10:14 - INFO - grabbed configs
+2025-06-19 10:14 - INFO - assigned connection params
+2025-06-19 10:14 - INFO - loaded connection string
+2025-06-19 10:14 - INFO - passed conn_str into engine
+2025-06-19 10:14 - INFO - engine and sessionmaker initialized
+2025-06-19 10:16 - INFO - grabbed configs
+2025-06-19 10:16 - INFO - assigned connection params
+2025-06-19 10:16 - INFO - loaded connection string
+2025-06-19 10:16 - INFO - passed conn_str into engine
+2025-06-19 10:16 - INFO - engine and sessionmaker initialized
+2025-06-19 10:17 - INFO - grabbed configs
+2025-06-19 10:17 - INFO - assigned connection params
+2025-06-19 10:17 - INFO - loaded connection string
+2025-06-19 10:17 - INFO - passed conn_str into engine
+2025-06-19 10:17 - INFO - engine and sessionmaker initialized
+2025-06-19 10:17 - DEBUG - student bp created
+2025-06-19 10:17 - DEBUG - connection created
+2025-06-19 10:17 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:17 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:17 - DEBUG - inside get_student view
+2025-06-19 10:17 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 31, in get_student
+    session.execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2149, in _execute_internal
+    statement = coercions.expect(roles.StatementRole, statement)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 395, in expect
+    resolved = impl._literal_coercion(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 634, in _literal_coercion
+    self._raise_for_expected(element, argname)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/coercions.py", line 518, in _raise_for_expected
+    raise exc.ArgumentError(msg, code=code) from err
+sqlalchemy.exc.ArgumentError: Executable SQL or text() construct expected, got <function text at 0x7e784e3ddc60>.
+2025-06-19 10:17 - INFO - 127.0.0.1 - - [19/Jun/2025 10:17:57] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:19 - INFO - grabbed configs
+2025-06-19 10:19 - INFO - assigned connection params
+2025-06-19 10:19 - INFO - loaded connection string
+2025-06-19 10:19 - INFO - passed conn_str into engine
+2025-06-19 10:19 - INFO - engine and sessionmaker initialized
+2025-06-19 10:19 - DEBUG - student bp created
+2025-06-19 10:19 - DEBUG - connection created
+2025-06-19 10:19 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:19 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:19 - DEBUG - inside get_student view
+2025-06-19 10:19 - INFO - SELECT DATABASE()
+2025-06-19 10:19 - INFO - [raw sql] {}
+2025-06-19 10:19 - INFO - SELECT @@sql_mode
+2025-06-19 10:19 - INFO - [raw sql] {}
+2025-06-19 10:19 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:19 - INFO - [raw sql] {}
+2025-06-19 10:19 - INFO - BEGIN (implicit)
+2025-06-19 10:19 - INFO - SELECT * FROM STUDENTWHERE phone_number = 111-222-3333
+2025-06-19 10:19 - INFO - [generated in 0.00011s] {}
+2025-06-19 10:19 - INFO - ROLLBACK
+2025-06-19 10:19 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 111-222-3333' at line 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 31, in get_student
+    session.execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= 111-222-3333' at line 1")
+[SQL: SELECT * FROM STUDENTWHERE phone_number = 111-222-3333]
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-19 10:19 - INFO - 127.0.0.1 - - [19/Jun/2025 10:19:47] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:20 - INFO - grabbed configs
+2025-06-19 10:20 - INFO - assigned connection params
+2025-06-19 10:20 - INFO - loaded connection string
+2025-06-19 10:20 - INFO - passed conn_str into engine
+2025-06-19 10:20 - INFO - engine and sessionmaker initialized
+2025-06-19 10:20 - DEBUG - student bp created
+2025-06-19 10:20 - DEBUG - connection created
+2025-06-19 10:20 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:20 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:20 - DEBUG - inside get_student view
+2025-06-19 10:20 - INFO - SELECT DATABASE()
+2025-06-19 10:20 - INFO - [raw sql] {}
+2025-06-19 10:20 - INFO - SELECT @@sql_mode
+2025-06-19 10:20 - INFO - [raw sql] {}
+2025-06-19 10:20 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:20 - INFO - [raw sql] {}
+2025-06-19 10:20 - INFO - BEGIN (implicit)
+2025-06-19 10:20 - INFO - SELECT * FROM STUDENTWHERE phone_number = '111-222-3333'
+2025-06-19 10:20 - INFO - [generated in 0.00012s] {}
+2025-06-19 10:20 - INFO - ROLLBACK
+2025-06-19 10:20 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= '111-222-3333'' at line 1")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 31, in get_student
+    session.execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1064, "You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '= '111-222-3333'' at line 1")
+[SQL: SELECT * FROM STUDENTWHERE phone_number = '111-222-3333']
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-19 10:20 - INFO - 127.0.0.1 - - [19/Jun/2025 10:20:15] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:20 - INFO - grabbed configs
+2025-06-19 10:20 - INFO - assigned connection params
+2025-06-19 10:20 - INFO - loaded connection string
+2025-06-19 10:20 - INFO - passed conn_str into engine
+2025-06-19 10:20 - INFO - engine and sessionmaker initialized
+2025-06-19 10:20 - DEBUG - student bp created
+2025-06-19 10:20 - DEBUG - connection created
+2025-06-19 10:20 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:20 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:20 - DEBUG - inside get_student view
+2025-06-19 10:20 - INFO - SELECT DATABASE()
+2025-06-19 10:20 - INFO - [raw sql] {}
+2025-06-19 10:20 - INFO - SELECT @@sql_mode
+2025-06-19 10:20 - INFO - [raw sql] {}
+2025-06-19 10:20 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:20 - INFO - [raw sql] {}
+2025-06-19 10:20 - INFO - BEGIN (implicit)
+2025-06-19 10:20 - INFO - SELECT * FROM STUDENT WHERE phone_number = '111-222-3333'
+2025-06-19 10:20 - INFO - [generated in 0.00013s] {}
+2025-06-19 10:20 - INFO - ROLLBACK
+2025-06-19 10:20 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.ProgrammingError: (1146, "Table 'appt_reminder.STUDENT' doesn't exist")
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 30, in get_student
+    session.execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+           ^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/sql/elements.py", line 523, in _execute_on_connection
+    return connection._execute_clauseelement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1638, in _execute_clauseelement
+    ret = self._execute_context(
+          ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1843, in _execute_context
+    return self._exec_single_context(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1983, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 2352, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1964, in _exec_single_context
+    self.dialect.do_execute(
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/default.py", line 945, in do_execute
+    cursor.execute(statement, parameters)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 153, in execute
+    result = self._query(query)
+             ^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/cursors.py", line 322, in _query
+    conn.query(q)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 563, in query
+    self._affected_rows = self._read_query_result(unbuffered=unbuffered)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 825, in _read_query_result
+    result.read()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 1199, in read
+    first_packet = self.connection._read_packet()
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/connections.py", line 775, in _read_packet
+    packet.raise_for_error()
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/protocol.py", line 219, in raise_for_error
+    err.raise_mysql_exception(self._data)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/pymysql/err.py", line 150, in raise_mysql_exception
+    raise errorclass(errno, errval)
+sqlalchemy.exc.ProgrammingError: (pymysql.err.ProgrammingError) (1146, "Table 'appt_reminder.STUDENT' doesn't exist")
+[SQL: SELECT * FROM STUDENT WHERE phone_number = '111-222-3333']
+(Background on this error at: https://sqlalche.me/e/20/f405)
+2025-06-19 10:20 - INFO - 127.0.0.1 - - [19/Jun/2025 10:20:49] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:21 - INFO - grabbed configs
+2025-06-19 10:21 - INFO - assigned connection params
+2025-06-19 10:21 - INFO - loaded connection string
+2025-06-19 10:21 - INFO - passed conn_str into engine
+2025-06-19 10:21 - INFO - engine and sessionmaker initialized
+2025-06-19 10:21 - DEBUG - student bp created
+2025-06-19 10:21 - DEBUG - connection created
+2025-06-19 10:21 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:21 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:21 - DEBUG - inside get_student view
+2025-06-19 10:21 - INFO - SELECT DATABASE()
+2025-06-19 10:21 - INFO - [raw sql] {}
+2025-06-19 10:21 - INFO - SELECT @@sql_mode
+2025-06-19 10:21 - INFO - [raw sql] {}
+2025-06-19 10:21 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:21 - INFO - [raw sql] {}
+2025-06-19 10:21 - INFO - BEGIN (implicit)
+2025-06-19 10:21 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:21 - INFO - [generated in 0.00013s] {}
+2025-06-19 10:21 - INFO - COMMIT
+2025-06-19 10:21 - DEBUG - student called by phone number
+2025-06-19 10:21 - INFO - 127.0.0.1 - - [19/Jun/2025 10:21:24] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:24 - INFO - grabbed configs
+2025-06-19 10:24 - INFO - assigned connection params
+2025-06-19 10:24 - INFO - loaded connection string
+2025-06-19 10:24 - INFO - passed conn_str into engine
+2025-06-19 10:24 - INFO - engine and sessionmaker initialized
+2025-06-19 10:24 - DEBUG - student bp created
+2025-06-19 10:24 - DEBUG - connection created
+2025-06-19 10:24 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:24 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:24 - DEBUG - inside get_student view
+2025-06-19 10:24 - INFO - SELECT DATABASE()
+2025-06-19 10:24 - INFO - [raw sql] {}
+2025-06-19 10:24 - INFO - SELECT @@sql_mode
+2025-06-19 10:24 - INFO - [raw sql] {}
+2025-06-19 10:24 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:24 - INFO - [raw sql] {}
+2025-06-19 10:24 - INFO - BEGIN (implicit)
+2025-06-19 10:24 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:24 - INFO - [generated in 0.00014s] {}
+2025-06-19 10:24 - INFO - COMMIT
+2025-06-19 10:24 - DEBUG - student called by phone number
+2025-06-19 10:24 - DEBUG - about to return json object to front end caller
+2025-06-19 10:24 - INFO - 127.0.0.1 - - [19/Jun/2025 10:24:06] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:26 - INFO - grabbed configs
+2025-06-19 10:26 - INFO - assigned connection params
+2025-06-19 10:26 - INFO - loaded connection string
+2025-06-19 10:26 - INFO - passed conn_str into engine
+2025-06-19 10:26 - INFO - engine and sessionmaker initialized
+2025-06-19 10:26 - DEBUG - student bp created
+2025-06-19 10:26 - DEBUG - connection created
+2025-06-19 10:26 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:26 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:26 - DEBUG - inside get_student view
+2025-06-19 10:26 - INFO - SELECT DATABASE()
+2025-06-19 10:26 - INFO - [raw sql] {}
+2025-06-19 10:26 - INFO - SELECT @@sql_mode
+2025-06-19 10:26 - INFO - [raw sql] {}
+2025-06-19 10:26 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:26 - INFO - [raw sql] {}
+2025-06-19 10:26 - INFO - BEGIN (implicit)
+2025-06-19 10:26 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:26 - INFO - [generated in 0.00014s] {}
+2025-06-19 10:26 - INFO - COMMIT
+2025-06-19 10:26 - DEBUG - student called by phone number
+2025-06-19 10:26 - DEBUG - about to return json object to front end caller
+2025-06-19 10:26 - INFO - 127.0.0.1 - - [19/Jun/2025 10:26:36] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:29 - INFO - grabbed configs
+2025-06-19 10:29 - INFO - assigned connection params
+2025-06-19 10:29 - INFO - loaded connection string
+2025-06-19 10:29 - INFO - passed conn_str into engine
+2025-06-19 10:29 - INFO - engine and sessionmaker initialized
+2025-06-19 10:29 - DEBUG - student bp created
+2025-06-19 10:29 - DEBUG - connection created
+2025-06-19 10:29 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:29 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:29 - DEBUG - inside get_student view
+2025-06-19 10:29 - INFO - SELECT DATABASE()
+2025-06-19 10:29 - INFO - [raw sql] {}
+2025-06-19 10:29 - INFO - SELECT @@sql_mode
+2025-06-19 10:29 - INFO - [raw sql] {}
+2025-06-19 10:29 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:29 - INFO - [raw sql] {}
+2025-06-19 10:29 - INFO - BEGIN (implicit)
+2025-06-19 10:29 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:29 - INFO - [generated in 0.00014s] {}
+2025-06-19 10:29 - DEBUG - student: <sqlalchemy.engine.cursor.CursorResult object at 0x700d4f22b930>
+2025-06-19 10:29 - INFO - COMMIT
+2025-06-19 10:29 - DEBUG - student called by phone number
+2025-06-19 10:29 - DEBUG - about to return json object to front end caller
+2025-06-19 10:29 - INFO - 127.0.0.1 - - [19/Jun/2025 10:29:16] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:31 - INFO - grabbed configs
+2025-06-19 10:31 - INFO - assigned connection params
+2025-06-19 10:31 - INFO - loaded connection string
+2025-06-19 10:31 - INFO - passed conn_str into engine
+2025-06-19 10:31 - INFO - engine and sessionmaker initialized
+2025-06-19 10:31 - DEBUG - student bp created
+2025-06-19 10:31 - DEBUG - connection created
+2025-06-19 10:31 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:31 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:31 - DEBUG - inside get_student view
+2025-06-19 10:31 - INFO - SELECT DATABASE()
+2025-06-19 10:31 - INFO - [raw sql] {}
+2025-06-19 10:31 - INFO - SELECT @@sql_mode
+2025-06-19 10:31 - INFO - [raw sql] {}
+2025-06-19 10:31 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:31 - INFO - [raw sql] {}
+2025-06-19 10:31 - INFO - BEGIN (implicit)
+2025-06-19 10:31 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:31 - INFO - [generated in 0.00032s] {}
+2025-06-19 10:31 - DEBUG - student: (6, 'firstname', 'last_name', 'firstnames.lastname@protonmail.com', '111-222-3333', 'Verizon', 0, datetime.datetime(2025, 5, 1, 20, 14, 35), datetime.datetime(2025, 5, 1, 20, 14, 35))
+2025-06-19 10:31 - INFO - COMMIT
+2025-06-19 10:31 - DEBUG - student called by phone number
+2025-06-19 10:31 - DEBUG - about to return json object to front end caller
+2025-06-19 10:31 - INFO - 127.0.0.1 - - [19/Jun/2025 10:31:42] "GET /students/students/111-222-3333 HTTP/1.1" 200 -
+2025-06-19 10:34 - INFO - grabbed configs
+2025-06-19 10:34 - INFO - assigned connection params
+2025-06-19 10:34 - INFO - loaded connection string
+2025-06-19 10:34 - INFO - passed conn_str into engine
+2025-06-19 10:34 - INFO - engine and sessionmaker initialized
+2025-06-19 10:34 - DEBUG - student bp created
+2025-06-19 10:34 - DEBUG - connection created
+2025-06-19 10:34 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:34 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:34 - DEBUG - inside get_student view
+2025-06-19 10:34 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 30, in get_student
+    student = session.execute(
+              ^^^^^^^^^^^^^^^^
+TypeError: Session.execute() got an unexpected keyword argument 'p'
+2025-06-19 10:34 - INFO - 127.0.0.1 - - [19/Jun/2025 10:34:56] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:36 - INFO - grabbed configs
+2025-06-19 10:36 - INFO - assigned connection params
+2025-06-19 10:36 - INFO - loaded connection string
+2025-06-19 10:36 - INFO - passed conn_str into engine
+2025-06-19 10:36 - INFO - engine and sessionmaker initialized
+2025-06-19 10:36 - DEBUG - student bp created
+2025-06-19 10:36 - DEBUG - connection created
+2025-06-19 10:36 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:36 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:36 - DEBUG - inside get_student view
+2025-06-19 10:36 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 30, in get_student
+    student = session.execute(
+              ^^^^^^^^^^^^^^^^
+TypeError: Session.execute() got an unexpected keyword argument 'p'
+2025-06-19 10:36 - INFO - 127.0.0.1 - - [19/Jun/2025 10:36:51] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:37 - INFO - grabbed configs
+2025-06-19 10:37 - INFO - assigned connection params
+2025-06-19 10:37 - INFO - loaded connection string
+2025-06-19 10:37 - INFO - passed conn_str into engine
+2025-06-19 10:37 - INFO - engine and sessionmaker initialized
+2025-06-19 10:37 - DEBUG - student bp created
+2025-06-19 10:37 - DEBUG - connection created
+2025-06-19 10:37 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:37 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:38 - DEBUG - inside get_student view
+2025-06-19 10:38 - INFO - SELECT DATABASE()
+2025-06-19 10:38 - INFO - [raw sql] {}
+2025-06-19 10:38 - INFO - SELECT @@sql_mode
+2025-06-19 10:38 - INFO - [raw sql] {}
+2025-06-19 10:38 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:38 - INFO - [raw sql] {}
+2025-06-19 10:38 - INFO - BEGIN (implicit)
+2025-06-19 10:38 - INFO - ROLLBACK
+2025-06-19 10:38 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 30, in get_student
+    student = session.execute(
+              ^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1410, in execute
+    distilled_parameters = _distill_params_20(parameters)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib/sqlalchemy/cyextension/util.pyx", line 37, in sqlalchemy.cyextension.util._distill_params_20
+sqlalchemy.exc.ArgumentError: mapping or list expected for parameters
+2025-06-19 10:38 - INFO - 127.0.0.1 - - [19/Jun/2025 10:38:02] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:39 - INFO - grabbed configs
+2025-06-19 10:39 - INFO - assigned connection params
+2025-06-19 10:39 - INFO - loaded connection string
+2025-06-19 10:39 - INFO - passed conn_str into engine
+2025-06-19 10:39 - INFO - engine and sessionmaker initialized
+2025-06-19 10:39 - DEBUG - student bp created
+2025-06-19 10:39 - DEBUG - connection created
+2025-06-19 10:39 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:39 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:39 - DEBUG - inside get_student view
+2025-06-19 10:39 - INFO - SELECT DATABASE()
+2025-06-19 10:39 - INFO - [raw sql] {}
+2025-06-19 10:39 - INFO - SELECT @@sql_mode
+2025-06-19 10:39 - INFO - [raw sql] {}
+2025-06-19 10:39 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:39 - INFO - [raw sql] {}
+2025-06-19 10:39 - INFO - BEGIN (implicit)
+2025-06-19 10:39 - INFO - SELECT * FROM STUDENTS WHERE phone_number = @p
+2025-06-19 10:39 - INFO - [generated in 0.00015s] {}
+2025-06-19 10:39 - DEBUG - student: None
+2025-06-19 10:39 - INFO - COMMIT
+2025-06-19 10:39 - DEBUG - student called by phone number
+2025-06-19 10:39 - DEBUG - about to return json object to front end caller
+2025-06-19 10:39 - INFO - 127.0.0.1 - - [19/Jun/2025 10:39:28] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:40 - INFO - grabbed configs
+2025-06-19 10:40 - INFO - assigned connection params
+2025-06-19 10:40 - INFO - loaded connection string
+2025-06-19 10:40 - INFO - passed conn_str into engine
+2025-06-19 10:40 - INFO - engine and sessionmaker initialized
+2025-06-19 10:40 - DEBUG - student bp created
+2025-06-19 10:40 - DEBUG - connection created
+2025-06-19 10:40 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:40 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:40 - DEBUG - inside get_student view
+2025-06-19 10:40 - INFO - SELECT DATABASE()
+2025-06-19 10:40 - INFO - [raw sql] {}
+2025-06-19 10:40 - INFO - SELECT @@sql_mode
+2025-06-19 10:40 - INFO - [raw sql] {}
+2025-06-19 10:40 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:40 - INFO - [raw sql] {}
+2025-06-19 10:40 - INFO - BEGIN (implicit)
+2025-06-19 10:40 - INFO - ROLLBACK
+2025-06-19 10:40 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 30, in get_student
+    student = session.execute(
+              ^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1410, in execute
+    distilled_parameters = _distill_params_20(parameters)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib/sqlalchemy/cyextension/util.pyx", line 37, in sqlalchemy.cyextension.util._distill_params_20
+sqlalchemy.exc.ArgumentError: mapping or list expected for parameters
+2025-06-19 10:40 - INFO - 127.0.0.1 - - [19/Jun/2025 10:40:28] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:41 - INFO - grabbed configs
+2025-06-19 10:41 - INFO - assigned connection params
+2025-06-19 10:41 - INFO - loaded connection string
+2025-06-19 10:41 - INFO - passed conn_str into engine
+2025-06-19 10:41 - INFO - engine and sessionmaker initialized
+2025-06-19 10:41 - DEBUG - student bp created
+2025-06-19 10:41 - DEBUG - connection created
+2025-06-19 10:41 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:41 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:41 - DEBUG - inside get_student view
+2025-06-19 10:41 - INFO - SELECT DATABASE()
+2025-06-19 10:41 - INFO - [raw sql] {}
+2025-06-19 10:41 - INFO - SELECT @@sql_mode
+2025-06-19 10:41 - INFO - [raw sql] {}
+2025-06-19 10:41 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:41 - INFO - [raw sql] {}
+2025-06-19 10:41 - INFO - BEGIN (implicit)
+2025-06-19 10:41 - INFO - ROLLBACK
+2025-06-19 10:41 - ERROR - unable to retrieve the student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 30, in get_student
+    student = session.execute(
+              ^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2365, in execute
+    return self._execute_internal(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 2260, in _execute_internal
+    result = conn.execute(
+             ^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/engine/base.py", line 1410, in execute
+    distilled_parameters = _distill_params_20(parameters)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "lib/sqlalchemy/cyextension/util.pyx", line 32, in sqlalchemy.cyextension.util._distill_params_20
+  File "lib/sqlalchemy/cyextension/util.pyx", line 23, in sqlalchemy.cyextension.util._check_item
+sqlalchemy.exc.ArgumentError: List argument must consist only of tuples or dictionaries
+2025-06-19 10:41 - INFO - 127.0.0.1 - - [19/Jun/2025 10:41:03] "[35m[1mGET /students/students/111-222-3333 HTTP/1.1[0m" 500 -
+2025-06-19 10:43 - INFO - grabbed configs
+2025-06-19 10:43 - INFO - assigned connection params
+2025-06-19 10:43 - INFO - loaded connection string
+2025-06-19 10:43 - INFO - passed conn_str into engine
+2025-06-19 10:43 - INFO - engine and sessionmaker initialized
+2025-06-19 10:43 - DEBUG - student bp created
+2025-06-19 10:43 - DEBUG - connection created
+2025-06-19 10:43 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:43 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:43 - DEBUG - inside get_student view
+2025-06-19 10:43 - INFO - SELECT DATABASE()
+2025-06-19 10:43 - INFO - [raw sql] {}
+2025-06-19 10:43 - INFO - SELECT @@sql_mode
+2025-06-19 10:43 - INFO - [raw sql] {}
+2025-06-19 10:43 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:43 - INFO - [raw sql] {}
+2025-06-19 10:43 - INFO - BEGIN (implicit)
+2025-06-19 10:43 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:43 - INFO - [generated in 0.00010s] {}
+2025-06-19 10:43 - DEBUG - student: (6, 'firstname', 'last_name', 'firstnames.lastname@protonmail.com', '111-222-3333', 'Verizon', 0, datetime.datetime(2025, 5, 1, 20, 14, 35), datetime.datetime(2025, 5, 1, 20, 14, 35))
+2025-06-19 10:43 - INFO - COMMIT
+2025-06-19 10:43 - DEBUG - student called by phone number
+2025-06-19 10:43 - DEBUG - about to return json object to front end caller
+2025-06-19 10:43 - INFO - 127.0.0.1 - - [19/Jun/2025 10:43:24] "GET /students/students/111-222-3333 HTTP/1.1" 200 -
+2025-06-19 10:43 - DEBUG - inside get_student view
+2025-06-19 10:43 - INFO - BEGIN (implicit)
+2025-06-19 10:43 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3334'
+2025-06-19 10:43 - INFO - [generated in 0.00012s] {}
+2025-06-19 10:43 - DEBUG - student: None
+2025-06-19 10:43 - INFO - COMMIT
+2025-06-19 10:43 - DEBUG - student called by phone number
+2025-06-19 10:43 - DEBUG - about to return json object to front end caller
+2025-06-19 10:43 - INFO - 127.0.0.1 - - [19/Jun/2025 10:43:30] "[35m[1mGET /students/students/111-222-3334 HTTP/1.1[0m" 500 -
+2025-06-19 10:46 - INFO - grabbed configs
+2025-06-19 10:46 - INFO - assigned connection params
+2025-06-19 10:46 - INFO - loaded connection string
+2025-06-19 10:46 - INFO - passed conn_str into engine
+2025-06-19 10:46 - INFO - engine and sessionmaker initialized
+2025-06-19 10:46 - DEBUG - student bp created
+2025-06-19 10:46 - DEBUG - connection created
+2025-06-19 10:46 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 10:46 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 10:46 - DEBUG - inside get_student view
+2025-06-19 10:46 - INFO - SELECT DATABASE()
+2025-06-19 10:46 - INFO - [raw sql] {}
+2025-06-19 10:46 - INFO - SELECT @@sql_mode
+2025-06-19 10:46 - INFO - [raw sql] {}
+2025-06-19 10:46 - INFO - SELECT @@lower_case_table_names
+2025-06-19 10:46 - INFO - [raw sql] {}
+2025-06-19 10:46 - INFO - BEGIN (implicit)
+2025-06-19 10:46 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3334'
+2025-06-19 10:46 - INFO - [generated in 0.00017s] {}
+2025-06-19 10:46 - DEBUG - student: None
+2025-06-19 10:46 - INFO - COMMIT
+2025-06-19 10:46 - DEBUG - student called by phone number
+2025-06-19 10:46 - DEBUG - about to return json object to front end caller
+2025-06-19 10:46 - ERROR - incorrect phone number entered
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/routes.py", line 19, in get_student
+    "student_id": student.student_id,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'student_id'
+2025-06-19 10:46 - INFO - 127.0.0.1 - - [19/Jun/2025 10:46:44] "GET /students/students/111-222-3334 HTTP/1.1" 200 -
+2025-06-19 10:46 - DEBUG - inside get_student view
+2025-06-19 10:46 - INFO - BEGIN (implicit)
+2025-06-19 10:46 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:46 - INFO - [generated in 0.00014s] {}
+2025-06-19 10:46 - DEBUG - student: (6, 'firstname', 'last_name', 'firstnames.lastname@protonmail.com', '111-222-3333', 'Verizon', 0, datetime.datetime(2025, 5, 1, 20, 14, 35), datetime.datetime(2025, 5, 1, 20, 14, 35))
+2025-06-19 10:46 - INFO - COMMIT
+2025-06-19 10:46 - DEBUG - student called by phone number
+2025-06-19 10:46 - DEBUG - about to return json object to front end caller
+2025-06-19 10:46 - INFO - 127.0.0.1 - - [19/Jun/2025 10:46:55] "GET /students/students/111-222-3333 HTTP/1.1" 200 -
+2025-06-19 10:50 - DEBUG - inside get_student view
+2025-06-19 10:50 - INFO - BEGIN (implicit)
+2025-06-19 10:50 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '"111-222-3333"'
+2025-06-19 10:50 - INFO - [generated in 0.00017s] {}
+2025-06-19 10:50 - DEBUG - student: None
+2025-06-19 10:50 - INFO - COMMIT
+2025-06-19 10:50 - DEBUG - student called by phone number
+2025-06-19 10:50 - DEBUG - about to return json object to front end caller
+2025-06-19 10:50 - ERROR - incorrect phone number entered
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/routes.py", line 19, in get_student
+    "student_id": student.student_id,
+                  ^^^^^^^^^^^^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'student_id'
+2025-06-19 10:50 - INFO - 127.0.0.1 - - [19/Jun/2025 10:50:35] "GET /students/students/"111-222-3333" HTTP/1.1" 200 -
+2025-06-19 10:50 - DEBUG - inside get_student view
+2025-06-19 10:50 - INFO - BEGIN (implicit)
+2025-06-19 10:50 - INFO - SELECT * FROM STUDENTS WHERE phone_number = '111-222-3333'
+2025-06-19 10:50 - INFO - [cached since 226.4s ago] {}
+2025-06-19 10:50 - DEBUG - student: (6, 'firstname', 'last_name', 'firstnames.lastname@protonmail.com', '111-222-3333', 'Verizon', 0, datetime.datetime(2025, 5, 1, 20, 14, 35), datetime.datetime(2025, 5, 1, 20, 14, 35))
+2025-06-19 10:50 - INFO - COMMIT
+2025-06-19 10:50 - DEBUG - student called by phone number
+2025-06-19 10:50 - DEBUG - about to return json object to front end caller
+2025-06-19 10:50 - INFO - 127.0.0.1 - - [19/Jun/2025 10:50:42] "GET /students/students/111-222-3333 HTTP/1.1" 200 -
+2025-06-19 10:52 - INFO - 127.0.0.1 - - [19/Jun/2025 10:52:44] "[33mPOST /students/students HTTP/1.1[0m" 404 -
+2025-06-19 11:04 - INFO - grabbed configs
+2025-06-19 11:04 - INFO - assigned connection params
+2025-06-19 11:04 - INFO - loaded connection string
+2025-06-19 11:04 - INFO - passed conn_str into engine
+2025-06-19 11:04 - INFO - engine and sessionmaker initialized
+2025-06-19 11:04 - DEBUG - student bp created
+2025-06-19 11:04 - DEBUG - connection created
+2025-06-19 11:04 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 11:04 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 11:04 - INFO - 127.0.0.1 - - [19/Jun/2025 11:04:33] "[35m[1mPOST /students/students HTTP/1.1[0m" 500 -
+2025-06-19 11:05 - INFO - grabbed configs
+2025-06-19 11:05 - INFO - assigned connection params
+2025-06-19 11:05 - INFO - loaded connection string
+2025-06-19 11:05 - INFO - passed conn_str into engine
+2025-06-19 11:05 - INFO - engine and sessionmaker initialized
+2025-06-19 11:05 - DEBUG - student bp created
+2025-06-19 11:05 - DEBUG - connection created
+2025-06-19 11:05 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 11:05 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 11:05 - DEBUG - inside create_student view
+2025-06-19 11:05 - DEBUG - student called by phone number
+2025-06-19 11:05 - DEBUG - about to return json object to front end caller
+2025-06-19 11:05 - ERROR - unable to create new student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 61, in create_student
+    first_name=content["firstname"],
+               ~~~~~~~^^^^^^^^^^^^^
+KeyError: 'firstname'
+2025-06-19 11:05 - ERROR - error during student creation
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/routes.py", line 39, in create_student
+    student = action.create_student(post_body)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 75, in create_student
+    raise e
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 61, in create_student
+    first_name=content["firstname"],
+               ~~~~~~~^^^^^^^^^^^^^
+KeyError: 'firstname'
+2025-06-19 11:05 - INFO - 127.0.0.1 - - [19/Jun/2025 11:05:48] "POST /students/students HTTP/1.1" 200 -
+2025-06-19 11:06 - INFO - grabbed configs
+2025-06-19 11:06 - INFO - assigned connection params
+2025-06-19 11:06 - INFO - loaded connection string
+2025-06-19 11:06 - INFO - passed conn_str into engine
+2025-06-19 11:06 - INFO - engine and sessionmaker initialized
+2025-06-19 11:06 - DEBUG - student bp created
+2025-06-19 11:06 - DEBUG - connection created
+2025-06-19 11:06 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 11:06 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 11:06 - DEBUG - inside create_student view
+2025-06-19 11:06 - DEBUG - student called by phone number
+2025-06-19 11:06 - DEBUG - about to return json object to front end caller
+2025-06-19 11:06 - ERROR - unable to create new student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 60, in create_student
+    new_student = Student(
+                  ^^^^^^^^
+TypeError: Student.__init__() got an unexpected keyword argument 'first_name'
+2025-06-19 11:06 - ERROR - error during student creation
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/routes.py", line 39, in create_student
+    student = action.create_student(post_body)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 75, in create_student
+    raise e
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 60, in create_student
+    new_student = Student(
+                  ^^^^^^^^
+TypeError: Student.__init__() got an unexpected keyword argument 'first_name'
+2025-06-19 11:06 - INFO - 127.0.0.1 - - [19/Jun/2025 11:06:56] "POST /students/students HTTP/1.1" 200 -
+2025-06-19 11:10 - INFO - grabbed configs
+2025-06-19 11:10 - INFO - assigned connection params
+2025-06-19 11:10 - INFO - loaded connection string
+2025-06-19 11:10 - INFO - passed conn_str into engine
+2025-06-19 11:10 - INFO - engine and sessionmaker initialized
+2025-06-19 11:10 - DEBUG - student bp created
+2025-06-19 11:10 - DEBUG - connection created
+2025-06-19 11:10 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 11:10 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 11:11 - DEBUG - inside create_student view
+2025-06-19 11:11 - DEBUG - student called by phone number
+2025-06-19 11:11 - DEBUG - about to return json object to front end caller
+2025-06-19 11:11 - ERROR - unable to create new student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 60, in create_student
+    new_student = Student(
+                  ^^^^^^^^
+TypeError: Student.__init__() got an unexpected keyword argument 'last_name'
+2025-06-19 11:11 - ERROR - error during student creation
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/routes.py", line 39, in create_student
+    student = action.create_student(post_body)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 75, in create_student
+    raise e
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 60, in create_student
+    new_student = Student(
+                  ^^^^^^^^
+TypeError: Student.__init__() got an unexpected keyword argument 'last_name'
+2025-06-19 11:11 - INFO - 127.0.0.1 - - [19/Jun/2025 11:11:02] "POST /students/students HTTP/1.1" 200 -
+2025-06-19 11:12 - INFO - grabbed configs
+2025-06-19 11:12 - INFO - assigned connection params
+2025-06-19 11:12 - INFO - loaded connection string
+2025-06-19 11:12 - INFO - passed conn_str into engine
+2025-06-19 11:12 - INFO - engine and sessionmaker initialized
+2025-06-19 11:12 - DEBUG - student bp created
+2025-06-19 11:12 - DEBUG - connection created
+2025-06-19 11:12 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-06-19 11:12 - INFO - [33mPress CTRL+C to quit[0m
+2025-06-19 11:12 - DEBUG - inside create_student view
+2025-06-19 11:12 - DEBUG - student called by phone number
+2025-06-19 11:12 - DEBUG - about to return json object to front end caller
+2025-06-19 11:12 - ERROR - unable to create new student
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3477, in add
+    state = attributes.instance_state(instance)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Student' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 68, in create_student
+    session.add(new_student)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3479, in add
+    raise exc.UnmappedInstanceError(instance) from err
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'app.services.students.domain.student.Student' is not mapped
+2025-06-19 11:12 - ERROR - error during student creation
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3477, in add
+    state = attributes.instance_state(instance)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'Student' object has no attribute '_sa_instance_state'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/routes.py", line 39, in create_student
+    student = action.create_student(post_body)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 75, in create_student
+    raise e
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/app/services/students/action/student_action.py", line 68, in create_student
+    session.add(new_student)
+  File "/home/alexander-creznic/Documents/projects/appt_reminder/backend/appt_reminder/.venv/lib/python3.12/site-packages/sqlalchemy/orm/session.py", line 3479, in add
+    raise exc.UnmappedInstanceError(instance) from err
+sqlalchemy.orm.exc.UnmappedInstanceError: Class 'app.services.students.domain.student.Student' is not mapped
+2025-06-19 11:12 - INFO - 127.0.0.1 - - [19/Jun/2025 11:12:43] "POST /students/students HTTP/1.1" 200 -

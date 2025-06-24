@@ -9,7 +9,7 @@ class StudentAction:
         pass
 
 
-
+        
     def get_student(self, phone_number:str):
         """
         Retrieves a Student entity object. Finds the student with the student's phone number.
@@ -25,21 +25,18 @@ class StudentAction:
         try:
             with Session.begin() as session:
                 # define query
-                query = session.execute(
-                   "SELECT * FROM STUDENT" \
-                   "WHERE phone_number = %s", 
-                   (phone_number,)
-                )
+                query = text(f"SELECT * FROM STUDENTS WHERE phone_number = '{phone_number}'")
+                   # , (phone_number,))
+                student = session.execute(query).fetchone()
                 
-                # fetch the result
-                student = query
-                return query
+                debug(f"student: {student}")
+                return student
         except Exception as e:
             session.rollback()
             error("unable to retrieve the student")
             raise e
 
-    def create_student(self, firstname:str, lastname:str, email_address:str, phone_number:str, carrier:str, enabled:bool):
+    def create_student(self, content:dict):
         """
         Creates a Student entity object for storage in the database.
         
@@ -61,14 +58,16 @@ class StudentAction:
             # TODO: add a model that can be passed in as a single object instead of all these attributes
             with Session.begin() as session:
                 new_student = Student(
-                    firstname=firstname,
-                    lastname=lastname,
-                    email_address=email_address,
-                    phone_number=phone_number,
-                    carrier=carrier,
-                    enabled=enabled
+                    _first_name=content["first_name"],
+                    _last_name=content["last_name"],
+                    _email_address=content["email_address"],
+                    _phone_number=content["phone_number"],
+                    _carrier=content["carrier"],
+                    _enabled=content["enabled"]
                 )
-                session.add(new_student)
+                # perform mapping here
+                # new_students_instance = new_student.to_students()
+                session.add(new_students_instance)
                 session.commit()
                 session.refresh(new_student) # remove if not returning student
                 return new_student
