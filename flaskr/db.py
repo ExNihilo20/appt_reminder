@@ -8,12 +8,14 @@ from flask import current_app, g
 from configparser import ConfigParser
 import os
 
+Base = declarative_base()
+
+
 # CONFIGURATION MANAGEMENT
 # ========================
-def get_engine():
-    if 'engine' not in g:
 
-        # grab mysql strings
+def build_connection_string():
+    # grab mysql strings
         parser = ConfigParser()
 
         # get the configuration information
@@ -29,14 +31,20 @@ def get_engine():
         mysql_port = parser.get('mysql', 'mysql_port')
         mysql_dbname = parser.get('mysql', 'mysql_dbname')
 
-        # BUILD CONNECTIO STRING
+        # BUILD CONNECTION STRING
         # ======================
         # build connection string using params
         connection_string = f'mysql+pymysql://{mysql_user}:{mysql_pass}@{mysql_host}:{mysql_port}/{mysql_dbname}'
         print(f"connection string: {connection_string}")
+        return connection_string
+
+def get_engine():
+    if 'engine' not in g:
+        connection_string = build_connection_string()
         # pass string into engine
         engine = create_engine(connection_string, echo=True)
         g.engine = engine
+        return g.engine
 
 def get_db():
     if 'db_session' not in g:
@@ -45,7 +53,14 @@ def get_db():
         g.db_session = Session()
     return g.db_session
 
-Base = declarative_base()
+def close_db(e=None):
+    db_session = g.pop('db_session', None)
+    if db_session is not None:
+        db_session.close()
+
+def init_app(app):
+    app.teardown_appcontext(close_db)
+
 
 
 # STUDENTS TABLE MAPPING
