@@ -1,0 +1,13 @@
+blinker==1.9.0
+click==8.2.1
+Flask==3.1.1
+greenlet==3.2.3
+itsdangerous==2.2.0
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+mysql-connector==2.2.9
+pip3-autoremove==1.2.2
+setuptools==80.9.0
+SQLAlchemy==2.0.41
+typing_extensions==4.14.1
+Werkzeug==3.1.3
