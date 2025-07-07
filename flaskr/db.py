@@ -4,6 +4,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship, sessionmaker
 from datetime import datetime
 from flask import current_app, g
+from flaskr.utils.logging import debug, info, warning, error, critical
 
 from configparser import ConfigParser
 import os
@@ -22,7 +23,9 @@ def build_connection_string():
         config_path = os.path.expanduser("~/projects/appt_reminder/conf/appt_reminder.config")
         parser.read(config_path, encoding="utf-8")
 
-        print(f'has section mysql: {parser.has_section('mysql')}')
+        for key, value in parser.items():
+            message = f'{key} = {value}'
+            info(message)
 
         # grab connection params
         mysql_user = parser.get('mysql', 'mysql_user')
@@ -30,12 +33,14 @@ def build_connection_string():
         mysql_host = parser.get('mysql', 'mysql_host')
         mysql_port = parser.get('mysql', 'mysql_port')
         mysql_dbname = parser.get('mysql', 'mysql_dbname')
-
+        
+        info('assigned params')
         # BUILD CONNECTION STRING
         # ======================
         # build connection string using params
         connection_string = f'mysql+pymysql://{mysql_user}:{mysql_pass}@{mysql_host}:{mysql_port}/{mysql_dbname}'
         print(f"connection string: {connection_string}")
+        info('connection string: {connection_string}')
         return connection_string
 
 def get_engine():

@@ -150,7 +150,7 @@ For more detailed information on creating users and managing privileges, you can
 
 3. Copy/paste the contents below to your config file and update the information to suite your local needs. This project is set up for using Protonmail secure email client, but feel free to modify the config file for Gmail, Outlook, or your preferred email client.
 
-```java
+```properties
 [protonmail]
 pm_email_address = first.last@email.com
 pm_username = email_username
