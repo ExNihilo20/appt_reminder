@@ -139,3 +139,41 @@ CREATE USER 'username'@'%' IDENTIFIED BY 'password';
 This is useful if the user needs to connect from different machines or networks 
 
 For more detailed information on creating users and managing privileges, you can `refer to the MariaDB documentation.` 
+
+## Generate Your Config Gile
+
+### From the home directory:
+
+1. Generate a `conf/` directory.
+
+2. Create a `appt_reminder.config` file
+
+3. Copy/paste the contents below to your config file and update the information to suite your local needs. This project is set up for using Protonmail secure email client, but feel free to modify the config file for Gmail, Outlook, or your preferred email client.
+
+```java
+[protonmail]
+pm_email_address = first.last@email.com
+pm_username = email_username
+pm_password = email_password
+
+[proton_bridge]
+pb_hostname = 127.0.0.1
+pb_IMAP_port = 1143
+pb_SMTP_port = 11025
+pb_username = email.address@pdomain.com
+pb_password = randomprotonbridgecharstring
+pb_security = STARTTLS
+
+[carrier]
+verizon = vtext.com
+att = txt.att.net
+tmobile = tmomail.net
+
+[mysql]
+mysql_user = root
+mysql_pass = yourpassword
+mysql_host = localhost
+mysql_port = 3306
+mysql_dbname = appt_reminder
+```
+The python config parser will pick up the contents of this file as properties for the project.
