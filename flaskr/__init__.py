@@ -5,9 +5,9 @@
 import os
 import flaskr.db as db
 from flask import Flask
+from flaskr.utils.logging import info
 
-
-
+info("general test")
 def create_app(test_config=None):
     # create and configure the app
     app = Flask(__name__, instance_relative_config=True)
@@ -16,7 +16,7 @@ def create_app(test_config=None):
         SECRET_KEY='dev',
         DATABASE=db.build_connection_string(), 
         )
-    
+    info("database connection string grabbed")
     if test_config is None:
         # load the instance config, if it exists, when not testing
         app.config.from_pyfile('config.py', silent=True)
