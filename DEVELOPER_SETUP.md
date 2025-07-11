@@ -177,3 +177,63 @@ mysql_port = 3306
 mysql_dbname = appt_reminder
 ```
 The python config parser will pick up the contents of this file as properties for the project.
+
+## Docker CLI Setup (`Debian` and `Ubuntu`)
+This project used Docker containers to host and deploy your application. To get started with containers follow these steps. NOTE: If you're running a Windows computer, consider running Docker within WSL (Windows Subsystem for Linux).
+
+**WARNING** Do 
+
+1. Set up Docker's apt repository
+    ```bash
+    # Add Docker's official GPG key:
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+    # Add the repository to Apt sources:
+    echo \
+        "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+        $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" | \
+        sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+    sudo apt-get update
+    ```
+2. Install the Docker Packages
+    ```bash
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    ```
+3. Verify successful installation
+    ```bash
+    sudo docker run hello-world
+    ```
+4. Set up rotating logs (avoids exhaustion of disk resources)
+    Configure the json-file driver. 
+    
+    - Navigate to `/etc/docker/`.
+    - If no daemon.json exists, create one.
+        ```bash
+        sudo nano daemon.json
+        ```
+    - Copy this into your daemon.json file to rotate logs. Sets log file max size to 10MB, and max number of rorated files to 3.
+        ```json
+        {
+          "log-driver": "json-file",
+          "log-opts": {
+            "max-size": "10m",
+            "max-file": "3"
+          }
+        }
+        ```
+    - Restart the docker daemon for the changes to take effect
+        ```bash
+        systemctl restart docker
+        ```
+More information can be found here: https://docs.docker.com/engine/logging/drivers/json-file/
+
+5. Configure Docker to start on boot with systemd
+`NOTE`: Not applicable for Debian and Ubuntu installs as this is default system behavior.
+    ```bash
+    sudo systemctl enable docker.service
+    sudo systemctl enable containerd.service
+    ```

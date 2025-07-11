@@ -9,8 +9,6 @@ from flaskr.utils.logging import debug, info, warning, error, critical
 from configparser import ConfigParser
 import os
 
-Base = declarative_base()
-
 
 # CONFIGURATION MANAGEMENT
 # ========================
@@ -20,7 +18,7 @@ def build_connection_string():
         parser = ConfigParser()
 
         # get the configuration information
-        config_path = os.path.expanduser("~/projects/appt_reminder/conf/appt_reminder.config")
+        config_path = os.path.expanduser("./appt_reminder.config")
         parser.read(config_path, encoding="utf-8")
 
         for key, value in parser.items():
@@ -66,7 +64,7 @@ def close_db(e=None):
 def init_app(app):
     app.teardown_appcontext(close_db)
 
-
+Base = declarative_base()
 
 # STUDENTS TABLE MAPPING
 # ======================
