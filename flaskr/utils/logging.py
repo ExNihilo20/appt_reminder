@@ -3,8 +3,7 @@ from logging.config import dictConfig
 import os
 
 # make sure the `logs/` directory exists in the correct location
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-LOG_DIR = os.path.join(BASE_DIR, 'logs')
+LOG_DIR = '/logs'
 os.makedirs(LOG_DIR, exist_ok=True)
 
 
@@ -19,7 +18,7 @@ def setup_logging():
         'disable_existing_loggers': False,
         'formatters': {
             'default': {
-                'format' : '[%(asctime)s] - %(levelname)s - %(message)s',
+                'format' : '[%(asctime)s] - %(levelname)s - %(name)s - %(message)s',
                 'style': '%',
                 'datefmt': '%Y-%m-%d %H:%M',
             }
@@ -33,6 +32,13 @@ def setup_logging():
                 'level': 'DEBUG',
                 'mode': 'a',
                 'encoding': 'utf-8'
+            },
+            # for docker console logging
+            'console': {
+                'class': 'logging.StreamHandler',
+                'formatter': 'default',
+                'level': 'DEBUG',
+                'stream': 'ext://sys.stdout'
             }
             # TODO: Activate once sqlalchemy connection established
             # 'sqlalchemy_file': {
@@ -61,12 +67,17 @@ def setup_logging():
             #     'propagate': False,
             # },
             # TODO: Activate once wsgi established
-            # 'werkzeug': {
-            #     'handlers': ['wsgi_file'],
-            #     'level': 'ERROR',
-            #     'propagate': False,
-            # },
             # Add more custom loggers here
+            'werkzeug': {
+                'handlers': ['app_file'],
+                'level': 'INFO',
+                'propagate': False
+            },
+            'app': {
+                'handlers': ['app_file'],
+                'level': 'DEBUG',
+                'propagate': False
+            }
         },
         'root': {
             'level': 'DEBUG',
