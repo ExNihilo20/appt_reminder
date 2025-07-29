@@ -69,7 +69,7 @@ The initial project setup is geared toward a `Ubuntu` OS, but the steps are simi
 3. Secure the installation:
     After installation, run the security script to set a root password, remove anonymous users, and disable root login
     ```bash
-    sudo mariadb-secure-installation:
+    sudo mariadb-secure-installation
     ```
     Follow the prompts to configure your security settings.
 
