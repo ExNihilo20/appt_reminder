@@ -10,7 +10,7 @@
 
        docker build --tag 'appt_reminder' .
 
-       docker run -p 5000:5000 apptreminder:latest
+       docker run -p 5000:5000 appt_reminder:latest
 
 3. In your browser:
     - Go to localhost:5000/hello
