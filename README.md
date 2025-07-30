@@ -2,8 +2,10 @@
 
 ## Running the app
 1. Complete the Developer Setup (See `DEVELOPER_SETUP.md`)
-2. Launch the app from the terminal:
+2. Launch the app from the terminal using the Python virtualenv you set up:
 
+       source venv/bin/activate
+       
        flask --app flaskr run --debug
 
    *Or* by using Docker:
