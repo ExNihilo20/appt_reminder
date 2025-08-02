@@ -3,7 +3,7 @@ from logging.config import dictConfig
 import os
 
 # make sure the `logs/` directory exists in the correct location
-LOG_DIR = '/logs'
+LOG_DIR = 'logs'
 os.makedirs(LOG_DIR, exist_ok=True)
 
 

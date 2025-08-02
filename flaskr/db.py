@@ -18,7 +18,7 @@ def build_connection_string():
         parser = ConfigParser()
 
         # get the configuration information
-        config_path = os.path.expanduser("./appt_reminder.config")
+        config_path = os.path.expanduser("./conf/appt_reminder.config")
         parser.read(config_path, encoding="utf-8")
 
         for key, value in parser.items():
