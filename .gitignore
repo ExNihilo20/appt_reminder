@@ -13,5 +13,8 @@ dist/
 build/
 *.egg-info/
 logs/
+
+
 .tables
 data/
+conf/

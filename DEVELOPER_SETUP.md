@@ -56,6 +56,17 @@ The initial project setup is geared toward a `Ubuntu` OS, but the steps are simi
         ```
         GitHub will authenticate you based on the SSH key in your SSH agent. 
 
+5. **Set up a Python virtual environment**
+
+       python -m venv ./venv
+       source venv/bin/activate
+       python -m pip install -r requirements.txt
+
+6. **Create a folder for log files**
+
+       mkdir ./logs
+
+
 ## MariaDB Setup (`Ubuntu/Debian`)
 
 1. Update package index before installation:
@@ -69,7 +80,7 @@ The initial project setup is geared toward a `Ubuntu` OS, but the steps are simi
 3. Secure the installation:
     After installation, run the security script to set a root password, remove anonymous users, and disable root login
     ```bash
-    sudo mariadb-secure-installation:
+    sudo mariadb-secure-installation
     ```
     Follow the prompts to configure your security settings.
 
@@ -146,7 +157,7 @@ For more detailed information on creating users and managing privileges, you can
 
 1. Generate a `conf/` directory.
 
-2. Create a `appt_reminder.config` file
+2. Create a `conf/appt_reminder.config` file
 
 3. Copy/paste the contents below to your config file and update the information to suite your local needs. This project is set up for using Protonmail secure email client, but feel free to modify the config file for Gmail, Outlook, or your preferred email client.
 

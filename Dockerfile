@@ -5,7 +5,7 @@ FROM python:3.12-slim
 WORKDIR /app
 
 # Copy the config file
-# COPY ./appt_reminder.config ./
+COPY ./conf/appt_reminder.config ./conf/
 
 # Copy and install the dependencies
 COPY requirements.txt /app
