@@ -4,7 +4,7 @@
 __pycache__/
 
 instance/
-
+appt_reminder.config
 .pytest.cache/
 .coverage
 htmlcov/
@@ -14,4 +14,7 @@ build/
 *.egg-info/
 logs/
 
+
+.tables
+data/
 conf/

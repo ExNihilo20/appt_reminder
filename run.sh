@@ -32,10 +32,17 @@ docker run -d \
 -p 5000:5000 \
 --name $CONTAINER_NAME \
 -v "$PWD/logs":/logs \
-# TODO: add volume for data like logs
+-v "$PWD/flaskr/data":/app/instance \
 -e TZ=America/New_York \
 $IMAGE_NAME
 
+
+# TODO: add volume for data like logs
+# -e TZ=America/New_York \
+
+
 # tail the logs to see live logs in the console window
 echo "✅ Container $CONTAINER_NAME is running."
+
+docker exec -it $CONTAINER_NAME sh
 # tail -f ./logs/app.log
